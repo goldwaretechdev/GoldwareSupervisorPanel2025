@@ -1,3 +1,7 @@
+using GoldwareSupervisorPanel2025.Pages;
+using GoldwareSupervisorPanel2025.Properties.services;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace GoldwareSupervisorPanel2025
 {
     internal static class Program
@@ -8,10 +12,31 @@ namespace GoldwareSupervisorPanel2025
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            // Create service collection
+            var services = new ServiceCollection();
+
+            ConfigureServices(services);
+
+            // Build service provider
+            var serviceProvider = services.BuildServiceProvider();
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            var Form = serviceProvider.GetRequiredService<SetSettings>();
+            Application.Run(Form);
+        }
+
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            //// Register your forms
+            //services.AddTransient<MainForm>();
+            services.AddTransient<Login>();
+            services.AddTransient<SelectUnit>();
+            services.AddTransient<SetSettings>();
+            // Register your services
+            services.AddScoped<ICommonService, CommonService>();
         }
     }
 }

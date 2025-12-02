@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldwareSupervisorPanel2025.Properties.services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +14,15 @@ namespace GoldwareSupervisorPanel2025.Pages
 {
     public partial class SelectUnit : Form
     {
-        public SelectUnit()
+        private readonly ICommonService _commonService;
+        public SelectUnit(ICommonService common)
         {
             InitializeComponent();
+            _commonService = common;
             //todo get data
-            com_box_units.Items.Add("develop");
-            com_box_units.Items.Add("production");
-
-            com_box_units.SelectedIndexChanged += com_box_units_SelectedIndexChanged;
+            comb_units.Items.Add("develop");
+            comb_units.Items.Add("production");
+            comb_units.SelectedIndexChanged += com_box_units_SelectedIndexChanged;
         }
 
 
@@ -33,17 +35,23 @@ namespace GoldwareSupervisorPanel2025.Pages
         private void btn_enter_Click(object sender, EventArgs e)
         {
             //todo check
-            Main main = new();
+            SetSettings main = new(_commonService);
             main.Show();
-            this.Hide();
+            Hide();
         }
 
         private void com_box_units_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(com_box_units.SelectedIndex!=-1)
+            if (comb_units.SelectedIndex != -1)
                 btn_enter.Enabled = true;
             else
                 btn_enter.Enabled = false;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }

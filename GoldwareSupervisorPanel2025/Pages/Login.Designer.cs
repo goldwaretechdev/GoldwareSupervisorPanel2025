@@ -57,7 +57,7 @@
             txt_box_pass = new Guna.UI2.WinForms.Guna2TextBox();
             btn_login = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            btn_close = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
@@ -102,7 +102,7 @@
             guna2Panel2.Controls.Add(btn_login);
             guna2Panel2.Controls.Add(guna2Panel3);
             guna2Panel2.CustomizableEdges = customizableEdges15;
-            guna2Panel2.Location = new Point(321, 0);
+            guna2Panel2.Location = new Point(322, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Panel2.Size = new Size(480, 600);
@@ -167,9 +167,11 @@
             lbl_title.Size = new Size(113, 23);
             lbl_title.TabIndex = 9;
             lbl_title.Text = "Login to panel";
+            lbl_title.Click += lbl_title_Click;
             // 
             // txt_box_username
             // 
+            txt_box_username.BorderColor = Color.FromArgb(150, 150, 150);
             txt_box_username.BorderRadius = 10;
             txt_box_username.CustomizableEdges = customizableEdges5;
             txt_box_username.DefaultText = "";
@@ -180,6 +182,7 @@
             txt_box_username.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
             txt_box_username.Font = new Font("Segoe UI", 9F);
             txt_box_username.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            txt_box_username.IconRight = (Image)resources.GetObject("txt_box_username.IconRight");
             txt_box_username.Location = new Point(85, 294);
             txt_box_username.Name = "txt_box_username";
             txt_box_username.PlaceholderText = "username";
@@ -201,6 +204,7 @@
             txt_box_pass.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
             txt_box_pass.Font = new Font("Segoe UI", 9F);
             txt_box_pass.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            txt_box_pass.IconRight = (Image)resources.GetObject("txt_box_pass.IconRight");
             txt_box_pass.Location = new Point(85, 349);
             txt_box_pass.Name = "txt_box_pass";
             txt_box_pass.PlaceholderText = "password";
@@ -234,7 +238,7 @@
             // 
             // guna2Panel3
             // 
-            guna2Panel3.Controls.Add(guna2ControlBox1);
+            guna2Panel3.Controls.Add(btn_close);
             guna2Panel3.CustomizableEdges = customizableEdges13;
             guna2Panel3.Location = new Point(-309, 1);
             guna2Panel3.Name = "guna2Panel3";
@@ -242,19 +246,20 @@
             guna2Panel3.Size = new Size(797, 34);
             guna2Panel3.TabIndex = 5;
             // 
-            // guna2ControlBox1
+            // btn_close
             // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.BackColor = Color.Transparent;
-            guna2ControlBox1.CustomizableEdges = customizableEdges11;
-            guna2ControlBox1.FillColor = Color.Transparent;
-            guna2ControlBox1.HoverState.FillColor = Color.FromArgb(213, 218, 223);
-            guna2ControlBox1.IconColor = Color.FromArgb(64, 64, 64);
-            guna2ControlBox1.Location = new Point(749, 2);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2ControlBox1.Size = new Size(45, 29);
-            guna2ControlBox1.TabIndex = 6;
+            btn_close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_close.BackColor = Color.Transparent;
+            btn_close.CustomizableEdges = customizableEdges11;
+            btn_close.FillColor = Color.Transparent;
+            btn_close.HoverState.FillColor = Color.FromArgb(213, 218, 223);
+            btn_close.IconColor = Color.FromArgb(64, 64, 64);
+            btn_close.Location = new Point(736, 2);
+            btn_close.Name = "btn_close";
+            btn_close.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_close.Size = new Size(45, 29);
+            btn_close.TabIndex = 6;
+            btn_close.Click += btn_close_Click;
             // 
             // Login
             // 
@@ -284,7 +289,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox btn_close;
         private Guna.UI2.WinForms.Guna2TextBox txt_box_username;
         private Guna.UI2.WinForms.Guna2TextBox txt_box_pass;
         private Guna.UI2.WinForms.Guna2Button btn_login;

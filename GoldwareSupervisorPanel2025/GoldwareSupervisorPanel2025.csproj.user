@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="design\RoundedTextBox.cs">
+    <Compile Update="Pages\controls\SetSettingStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Login.cs">
+    <Compile Update="Pages\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\Main.cs">
+    <Compile Update="Pages\SetSettings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\SelectUnit.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\controls\SetSettingStep1.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

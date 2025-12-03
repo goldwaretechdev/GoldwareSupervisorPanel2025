@@ -1,4 +1,4 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+﻿namespace GoldwareSupervisorPanel2025.Pages.Main
 {
     partial class SetSettingStep2
     {

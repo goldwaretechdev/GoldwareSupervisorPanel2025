@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\SetSettings\controls\GetSettingStep1.cs">
+    <Compile Update="Pages\Main\get_setting_controls\GetSettingStep1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\SetSettings\controls\GetSettingStep2.cs">
+    <Compile Update="Pages\Main\get_setting_controls\GetSettingStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

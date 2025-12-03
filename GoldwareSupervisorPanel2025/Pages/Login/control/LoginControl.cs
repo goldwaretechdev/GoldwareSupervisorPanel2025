@@ -1,20 +1,24 @@
-using GoldwareSupervisorPanel2025.Pages;
-using GoldwareSupervisorPanel2025.Properties.services;
-using Guna.UI2.WinForms;
-using System.Drawing.Imaging;
+﻿using GoldwareSupervisorPanel2025.Properties.services;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace GoldwareSupervisorPanel2025
+namespace GoldwareSupervisorPanel2025.Pages.Login.loginControl
 {
-    public partial class Login : Form
+    public partial class LoginControl : UserControl
     {
         private readonly ICommonService _commonService;
-        public Login(ICommonService commonService)
+        public event Action? OnLogin;
+        public LoginControl(ICommonService commonService)
         {
             InitializeComponent();
             _commonService = commonService;
-            this.MinimumSize = new Size(800, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
             txt_box_username.TextChanged += text_box_username_TextChanged;
             txt_box_pass.TextChanged += txt_box_pass_TextChanged;
             txt_box_username.Enter += txt_box_username_Enter;
@@ -26,22 +30,17 @@ namespace GoldwareSupervisorPanel2025
             txt_box_pass.Leave += txt_box_pass_Leave;
             txt_box_pass.MouseEnter += txt_box_pass_MouseEnter;
             txt_box_pass.MouseLeave += txt_box_pass_MouseLeave;
-
-
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
         }
 
-
-
+       
         private void btn_login_Click(object sender, EventArgs e)
         {
             //check data
-            SelectUnit selectUnit = new SelectUnit(_commonService); // create an instance of Form2
-            selectUnit.Show();
-            Hide();
+            OnLogin?.Invoke();
         }
 
         #region txt_username
@@ -107,34 +106,5 @@ namespace GoldwareSupervisorPanel2025
 
         #endregion
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_desc_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-       
-        private void lbl_title_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
     }
 }

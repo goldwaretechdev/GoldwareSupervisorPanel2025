@@ -1,6 +1,6 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+﻿namespace GoldwareSupervisorPanel2025.Pages.Main
 {
-    partial class SetSettingsForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetSettingsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -199,7 +199,7 @@
             panel_load_steps.TabIndex = 1;
             panel_load_steps.Paint += panel_load_steps_Paint;
             // 
-            // SetSettingsForm
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -208,7 +208,7 @@
             Controls.Add(panel_load_steps);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "SetSettingsForm";
+            Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             guna2Panel1.ResumeLayout(false);

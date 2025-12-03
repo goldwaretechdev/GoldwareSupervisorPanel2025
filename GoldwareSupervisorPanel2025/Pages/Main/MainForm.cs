@@ -3,16 +3,19 @@
 using GoldwareSupervisorPanel2025.Properties.services;
 using Guna.UI2.WinForms;
 
-namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+namespace GoldwareSupervisorPanel2025.Pages.Main
 {
-    public partial class SetSettingsForm : Form
+    public partial class MainForm : Form
     {
         private readonly ICommonService _commonService;
         private SetSettingStep1 _setSettingStep1;
         private SetSettingStep2 _setSettingStep2;
         private GetSettingStep1 _getSettingStep1;
         private GetSettingStep2 _getSettingStep2;
-        public SetSettingsForm(ICommonService commonService)
+        private UpdateFOTAStep1 _updateFOTAStep1;
+        private UpdateFOTAStep2 _updateFOTAStep2;
+        private UpdateFOTAStep3 _updateFOTAStep3;
+        public MainForm(ICommonService commonService)
         {
             InitializeComponent();
             _commonService = commonService;
@@ -20,6 +23,9 @@ namespace GoldwareSupervisorPanel2025.Pages.SetSettings
             _setSettingStep2 = new SetSettingStep2(_commonService);
             _getSettingStep1 = new GetSettingStep1();
             _getSettingStep2 = new GetSettingStep2();
+            _updateFOTAStep1 = new UpdateFOTAStep1();
+            _updateFOTAStep2 = new UpdateFOTAStep2();
+            _updateFOTAStep3 = new UpdateFOTAStep3();
             LoadSetSettingStep1();
         }
         private void LoadStep(UserControl step)
@@ -82,6 +88,7 @@ namespace GoldwareSupervisorPanel2025.Pages.SetSettings
 
         private void btn_update_fota_Click(object sender, EventArgs e)
         {
+            LoadStep(_updateFOTAStep1);
             SelectMenuItem(btn_update_fota);
         }
 

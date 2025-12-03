@@ -1,4 +1,4 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+﻿namespace GoldwareSupervisorPanel2025.Pages.Main
 {
     partial class SetSettingStep1
     {
@@ -65,6 +65,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             comb_device_type = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_device_type = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -97,6 +101,9 @@
             ctrl_min = new Guna.UI2.WinForms.Guna2ControlBox();
             ctrl_max = new Guna.UI2.WinForms.Guna2ControlBox();
             btn_close = new Guna.UI2.WinForms.Guna2ControlBox();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            lbl_last_update = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel_production_date.SuspendLayout();
             panel_serial_number.SuspendLayout();
             panel_batch_number.SuspendLayout();
@@ -104,6 +111,7 @@
             panel_product_owner.SuspendLayout();
             panel_hardwarw_version.SuspendLayout();
             panel_device_type.SuspendLayout();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // comb_device_type
@@ -537,11 +545,52 @@
             btn_close.TabIndex = 28;
             btn_close.Click += btn_close_Click;
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.Controls.Add(guna2TextBox1);
+            guna2Panel1.Controls.Add(lbl_last_update);
+            guna2Panel1.CustomizableEdges = customizableEdges39;
+            guna2Panel1.Location = new Point(502, 429);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            guna2Panel1.Size = new Size(320, 100);
+            guna2Panel1.TabIndex = 26;
+            // 
+            // guna2TextBox1
+            // 
+            guna2TextBox1.BorderRadius = 5;
+            guna2TextBox1.CustomizableEdges = customizableEdges37;
+            guna2TextBox1.DefaultText = "";
+            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
+            guna2TextBox1.Font = new Font("Segoe UI", 9F);
+            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            guna2TextBox1.Location = new Point(12, 37);
+            guna2TextBox1.Name = "guna2TextBox1";
+            guna2TextBox1.PlaceholderText = "last update";
+            guna2TextBox1.SelectedText = "";
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2TextBox1.Size = new Size(300, 40);
+            guna2TextBox1.TabIndex = 3;
+            // 
+            // lbl_last_update
+            // 
+            lbl_last_update.BackColor = Color.Transparent;
+            lbl_last_update.Location = new Point(12, 13);
+            lbl_last_update.Name = "lbl_last_update";
+            lbl_last_update.Size = new Size(61, 17);
+            lbl_last_update.TabIndex = 0;
+            lbl_last_update.Text = "last update";
+            // 
             // SetSettingStep1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(guna2Panel1);
             Controls.Add(ctrl_min);
             Controls.Add(ctrl_max);
             Controls.Add(btn_close);
@@ -570,6 +619,8 @@
             panel_hardwarw_version.PerformLayout();
             panel_device_type.ResumeLayout(false);
             panel_device_type.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -607,5 +658,8 @@
         private Guna.UI2.WinForms.Guna2ControlBox ctrl_min;
         private Guna.UI2.WinForms.Guna2ControlBox ctrl_max;
         private Guna.UI2.WinForms.Guna2ControlBox btn_close;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_last_update;
     }
 }

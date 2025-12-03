@@ -1,5 +1,5 @@
-﻿using GoldwareSupervisorPanel2025.Properties.services;
-using GoldwareSupervisorPanel2025.Pages.SetSettings;
+﻿using GoldwareSupervisorPanel2025.Pages.Main;
+using GoldwareSupervisorPanel2025.Properties.services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace GoldwareSupervisorPanel2025.Pages
+namespace GoldwareSupervisorPanel2025.Pages.Login.control
 {
-    public partial class SelectUnit : Form
+    public partial class SelectUnitControl : UserControl
     {
         private readonly ICommonService _commonService;
-        public SelectUnit(ICommonService common)
+        public SelectUnitControl(ICommonService common)
         {
             InitializeComponent();
             _commonService = common;
@@ -26,19 +25,9 @@ namespace GoldwareSupervisorPanel2025.Pages
             comb_units.SelectedIndexChanged += com_box_units_SelectedIndexChanged;
         }
 
-
-
-        private void SelectUnit_Load(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
-        }
-
-
-        private void btn_enter_Click(object sender, EventArgs e)
-        {
-            //todo check
-            SetSettingsForm main = new(_commonService);
-            main.Show();
-            Hide();
+            Application.Exit();
         }
 
         private void com_box_units_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,10 +38,11 @@ namespace GoldwareSupervisorPanel2025.Pages
                 btn_enter.Enabled = false;
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void btn_enter_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            MainForm main = new(_commonService);
+            main.Show();
+            Hide();
         }
     }
 }

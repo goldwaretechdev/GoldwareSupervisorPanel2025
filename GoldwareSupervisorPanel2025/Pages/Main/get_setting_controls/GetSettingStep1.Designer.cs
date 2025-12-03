@@ -1,4 +1,4 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+﻿namespace GoldwareSupervisorPanel2025.Pages.Main
 {
     partial class GetSettingStep1
     {
@@ -105,6 +105,7 @@
             txt_serial_number.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txt_serial_number.Size = new Size(350, 40);
             txt_serial_number.TabIndex = 7;
+            txt_serial_number.TextChanged += txt_serial_number_TextChanged;
             // 
             // btn_fetch
             // 
@@ -170,6 +171,7 @@
             btn_close.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_close.Size = new Size(45, 29);
             btn_close.TabIndex = 31;
+            btn_close.Click += btn_close_Click;
             // 
             // GetSettingStep1
             // 

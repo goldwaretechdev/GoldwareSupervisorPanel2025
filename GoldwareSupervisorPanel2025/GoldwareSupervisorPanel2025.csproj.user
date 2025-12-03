@@ -4,19 +4,31 @@
     <_LastSelectedProfileId>D:\Hasanabadi\Projects\GoldwareSupervisorPanel2025\GoldwareSupervisorPanel2025\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Pages\SetSettings\controls\SetSettingStep2.cs">
+    <Compile Update="Pages\Login\control\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Login.cs">
+    <Compile Update="Pages\Login\control\SelectUnitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pages\Main\set_setting_controls\SetSettingStep2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pages\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\SetSettings\SetSettings.cs">
+    <Compile Update="Pages\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\SelectUnit.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Pages\Main\set_setting_controls\SetSettingStep1.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\SetSettings\controls\SetSettingStep1.cs">
+    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pages\Main\update_fota_controls\UpdatFOTAStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

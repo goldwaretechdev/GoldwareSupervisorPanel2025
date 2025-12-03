@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GoldwareSupervisorPanel2025.Pages.SetSettings
+namespace GoldwareSupervisorPanel2025.Pages.Main
 {
     public partial class SetSettingStep2 : UserControl
     {

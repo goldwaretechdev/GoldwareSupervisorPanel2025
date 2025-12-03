@@ -1,4 +1,5 @@
 using GoldwareSupervisorPanel2025.Pages;
+using GoldwareSupervisorPanel2025.Pages.SetSettings;
 using GoldwareSupervisorPanel2025.Properties.services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,7 +25,7 @@ namespace GoldwareSupervisorPanel2025
             var serviceProvider = services.BuildServiceProvider();
 
             ApplicationConfiguration.Initialize();
-            var Form = serviceProvider.GetRequiredService<SetSettings>();
+            var Form = serviceProvider.GetRequiredService<SetSettingsForm>();
             Application.Run(Form);
         }
 
@@ -34,7 +35,7 @@ namespace GoldwareSupervisorPanel2025
             //services.AddTransient<MainForm>();
             services.AddTransient<Login>();
             services.AddTransient<SelectUnit>();
-            services.AddTransient<SetSettings>();
+            services.AddTransient<SetSettingsForm>();
             // Register your services
             services.AddScoped<ICommonService, CommonService>();
         }

@@ -1,6 +1,6 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages
+﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
 {
-    partial class SetSettings
+    partial class SetSettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetSettings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetSettingsForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -94,6 +94,7 @@
             btn_programming.Size = new Size(300, 40);
             btn_programming.TabIndex = 4;
             btn_programming.Text = "programming";
+            btn_programming.Click += btn_programming_Click;
             // 
             // btn_update_fota
             // 
@@ -119,6 +120,7 @@
             btn_update_fota.Size = new Size(300, 40);
             btn_update_fota.TabIndex = 3;
             btn_update_fota.Text = "update FOTA";
+            btn_update_fota.Click += btn_update_fota_Click;
             // 
             // btn_get_settings
             // 
@@ -145,18 +147,24 @@
             btn_get_settings.Size = new Size(300, 40);
             btn_get_settings.TabIndex = 2;
             btn_get_settings.Text = "get settings";
+            btn_get_settings.Click += btn_get_settings_Click;
             // 
             // btn_set_settings
             // 
+            btn_set_settings.BorderColor = Color.FromArgb(67, 67, 67);
             btn_set_settings.BorderRadius = 5;
+            btn_set_settings.BorderThickness = 1;
             btn_set_settings.CustomizableEdges = customizableEdges7;
             btn_set_settings.DisabledState.BorderColor = Color.DarkGray;
             btn_set_settings.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_set_settings.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_set_settings.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_set_settings.FillColor = Color.FromArgb(255, 149, 0);
+            btn_set_settings.FocusedColor = Color.FromArgb(255, 149, 0);
             btn_set_settings.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btn_set_settings.ForeColor = Color.White;
+            btn_set_settings.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            btn_set_settings.HoverState.FillColor = Color.FromArgb(67, 67, 67);
             btn_set_settings.Image = (Image)resources.GetObject("btn_set_settings.Image");
             btn_set_settings.ImageAlign = HorizontalAlignment.Left;
             btn_set_settings.ImageOffset = new Point(15, 0);
@@ -166,6 +174,7 @@
             btn_set_settings.Size = new Size(300, 40);
             btn_set_settings.TabIndex = 1;
             btn_set_settings.Text = "set settings";
+            btn_set_settings.Click += btn_set_settings_Click;
             // 
             // guna2PictureBox1
             // 
@@ -188,8 +197,9 @@
             panel_load_steps.ShadowDecoration.CustomizableEdges = customizableEdges14;
             panel_load_steps.Size = new Size(880, 720);
             panel_load_steps.TabIndex = 1;
+            panel_load_steps.Paint += panel_load_steps_Paint;
             // 
-            // SetSettings
+            // SetSettingsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -198,7 +208,7 @@
             Controls.Add(panel_load_steps);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "SetSettings";
+            Name = "SetSettingsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             guna2Panel1.ResumeLayout(false);

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GoldwareSupervisorPanel2025.Pages
+namespace GoldwareSupervisorPanel2025.Pages.SetSettings
 {
     public partial class SetSettingStep1 : UserControl
     {
@@ -29,7 +29,7 @@ namespace GoldwareSupervisorPanel2025.Pages
         }
 
 
-      
+
 
         private void btn_next_Click(object sender, EventArgs e)
         {
@@ -65,6 +65,21 @@ namespace GoldwareSupervisorPanel2025.Pages
             {
                 txt_production_date.IconRight = _commonService.TintIcon(txt_production_date.IconRight, Color.FromArgb(150, 150, 150));
             }
+        }
+
+        private void ctrl_min_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrl_max_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetSettingStep1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

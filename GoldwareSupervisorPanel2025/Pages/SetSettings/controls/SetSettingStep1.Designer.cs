@@ -1,4 +1,4 @@
-﻿namespace GoldwareSupervisorPanel2025.Pages
+﻿namespace GoldwareSupervisorPanel2025.Pages.SetSettings
 {
     partial class SetSettingStep1
     {
@@ -386,6 +386,7 @@
             // 
             // btn_next
             // 
+            btn_next.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_next.BorderRadius = 5;
             btn_next.CustomizableEdges = customizableEdges15;
             btn_next.DisabledState.BorderColor = Color.DarkGray;
@@ -397,13 +398,13 @@
             btn_next.ForeColor = Color.White;
             btn_next.ImageAlign = HorizontalAlignment.Left;
             btn_next.ImageOffset = new Point(15, 0);
-            btn_next.Location = new Point(212, 616);
+            btn_next.Location = new Point(266, 616);
             btn_next.Name = "btn_next";
             btn_next.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btn_next.Size = new Size(400, 50);
+            btn_next.Size = new Size(350, 45);
             btn_next.TabIndex = 27;
             btn_next.Text = "Next";
-            btn_next.Click += this.btn_next_Click;
+            btn_next.Click += btn_next_Click;
             // 
             // panel_production_date
             // 
@@ -411,7 +412,7 @@
             panel_production_date.Controls.Add(guna2HtmlLabel7);
             panel_production_date.Controls.Add(lbl_production_date);
             panel_production_date.CustomizableEdges = customizableEdges17;
-            panel_production_date.Location = new Point(33, 429);
+            panel_production_date.Location = new Point(59, 429);
             panel_production_date.Name = "panel_production_date";
             panel_production_date.ShadowDecoration.CustomizableEdges = customizableEdges18;
             panel_production_date.Size = new Size(320, 100);
@@ -423,7 +424,7 @@
             panel_serial_number.Controls.Add(guna2HtmlLabel6);
             panel_serial_number.Controls.Add(lbl_serial_number);
             panel_serial_number.CustomizableEdges = customizableEdges19;
-            panel_serial_number.Location = new Point(476, 321);
+            panel_serial_number.Location = new Point(502, 321);
             panel_serial_number.Name = "panel_serial_number";
             panel_serial_number.ShadowDecoration.CustomizableEdges = customizableEdges20;
             panel_serial_number.Size = new Size(320, 100);
@@ -435,7 +436,7 @@
             panel_batch_number.Controls.Add(guna2HtmlLabel5);
             panel_batch_number.Controls.Add(lbl_batch_number);
             panel_batch_number.CustomizableEdges = customizableEdges21;
-            panel_batch_number.Location = new Point(33, 321);
+            panel_batch_number.Location = new Point(59, 321);
             panel_batch_number.Name = "panel_batch_number";
             panel_batch_number.ShadowDecoration.CustomizableEdges = customizableEdges22;
             panel_batch_number.Size = new Size(320, 100);
@@ -447,7 +448,7 @@
             panel_category.Controls.Add(guna2HtmlLabel4);
             panel_category.Controls.Add(lbl_product_category);
             panel_category.CustomizableEdges = customizableEdges23;
-            panel_category.Location = new Point(476, 214);
+            panel_category.Location = new Point(502, 214);
             panel_category.Name = "panel_category";
             panel_category.ShadowDecoration.CustomizableEdges = customizableEdges24;
             panel_category.Size = new Size(320, 100);
@@ -459,7 +460,7 @@
             panel_product_owner.Controls.Add(guna2HtmlLabel3);
             panel_product_owner.Controls.Add(lbl_product_owner);
             panel_product_owner.CustomizableEdges = customizableEdges25;
-            panel_product_owner.Location = new Point(33, 214);
+            panel_product_owner.Location = new Point(59, 214);
             panel_product_owner.Name = "panel_product_owner";
             panel_product_owner.ShadowDecoration.CustomizableEdges = customizableEdges26;
             panel_product_owner.Size = new Size(320, 100);
@@ -471,7 +472,7 @@
             panel_hardwarw_version.Controls.Add(guna2HtmlLabel2);
             panel_hardwarw_version.Controls.Add(lbl_hardwarw_version);
             panel_hardwarw_version.CustomizableEdges = customizableEdges27;
-            panel_hardwarw_version.Location = new Point(476, 108);
+            panel_hardwarw_version.Location = new Point(502, 108);
             panel_hardwarw_version.Name = "panel_hardwarw_version";
             panel_hardwarw_version.ShadowDecoration.CustomizableEdges = customizableEdges28;
             panel_hardwarw_version.Size = new Size(320, 100);
@@ -483,7 +484,7 @@
             panel_device_type.Controls.Add(guna2HtmlLabel1);
             panel_device_type.Controls.Add(lbl_device_type);
             panel_device_type.CustomizableEdges = customizableEdges29;
-            panel_device_type.Location = new Point(33, 108);
+            panel_device_type.Location = new Point(59, 108);
             panel_device_type.Name = "panel_device_type";
             panel_device_type.ShadowDecoration.CustomizableEdges = customizableEdges30;
             panel_device_type.Size = new Size(320, 100);
@@ -503,6 +504,7 @@
             ctrl_min.ShadowDecoration.CustomizableEdges = customizableEdges32;
             ctrl_min.Size = new Size(45, 29);
             ctrl_min.TabIndex = 30;
+            ctrl_min.Click += ctrl_min_Click;
             // 
             // ctrl_max
             // 
@@ -518,6 +520,7 @@
             ctrl_max.ShadowDecoration.CustomizableEdges = customizableEdges34;
             ctrl_max.Size = new Size(45, 29);
             ctrl_max.TabIndex = 29;
+            ctrl_max.Click += ctrl_max_Click;
             // 
             // btn_close
             // 
@@ -532,6 +535,7 @@
             btn_close.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btn_close.Size = new Size(45, 29);
             btn_close.TabIndex = 28;
+            btn_close.Click += btn_close_Click;
             // 
             // SetSettingStep1
             // 
@@ -551,6 +555,7 @@
             Controls.Add(panel_device_type);
             Name = "SetSettingStep1";
             Size = new Size(880, 720);
+            Load += SetSettingStep1_Load;
             panel_production_date.ResumeLayout(false);
             panel_production_date.PerformLayout();
             panel_serial_number.ResumeLayout(false);

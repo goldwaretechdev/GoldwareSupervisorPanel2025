@@ -1,4 +1,5 @@
 ﻿using GoldwareSupervisorPanel2025.Properties.services;
+using GoldwareSupervisorPanel2025.Pages.SetSettings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +36,7 @@ namespace GoldwareSupervisorPanel2025.Pages
         private void btn_enter_Click(object sender, EventArgs e)
         {
             //todo check
-            SetSettings main = new(_commonService);
+            SetSettingsForm main = new(_commonService);
             main.Show();
             Hide();
         }

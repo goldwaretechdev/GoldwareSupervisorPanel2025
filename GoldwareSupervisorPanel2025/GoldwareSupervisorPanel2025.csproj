@@ -14,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\SetSettings\controls\GetSettingStep1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pages\SetSettings\controls\GetSettingStep2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -30,6 +36,7 @@
 
   <ItemGroup>
     <Folder Include="design\" />
+
   </ItemGroup>
 
 </Project>

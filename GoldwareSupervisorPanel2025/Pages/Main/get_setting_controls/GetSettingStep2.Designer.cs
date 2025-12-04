@@ -36,6 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -64,12 +66,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             ctrl_min = new Guna.UI2.WinForms.Guna2ControlBox();
             ctrl_max = new Guna.UI2.WinForms.Guna2ControlBox();
             btn_close = new Guna.UI2.WinForms.Guna2ControlBox();
             panel_device_data = new Guna.UI2.WinForms.Guna2Panel();
+            btn_export = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             lbl_ESP = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -111,7 +112,6 @@
             lbl_device_type = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_device_typee = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btn_ok = new Guna.UI2.WinForms.Guna2Button();
-            btn_export = new Guna.UI2.WinForms.Guna2Button();
             panel_device_data.SuspendLayout();
             guna2Panel13.SuspendLayout();
             guna2Panel12.SuspendLayout();
@@ -176,7 +176,7 @@
             // 
             panel_device_data.BackColor = Color.Transparent;
             panel_device_data.BorderColor = Color.FromArgb(255, 244, 229);
-            panel_device_data.BorderRadius = 15;
+            panel_device_data.BorderRadius = 12;
             panel_device_data.BorderThickness = 2;
             panel_device_data.Controls.Add(btn_export);
             panel_device_data.Controls.Add(guna2Panel13);
@@ -200,6 +200,25 @@
             panel_device_data.ShadowDecoration.CustomizableEdges = customizableEdges36;
             panel_device_data.Size = new Size(724, 549);
             panel_device_data.TabIndex = 34;
+            // 
+            // btn_export
+            // 
+            btn_export.BorderColor = Color.FromArgb(255, 149, 0);
+            btn_export.BorderRadius = 10;
+            btn_export.CustomizableEdges = customizableEdges7;
+            btn_export.DisabledState.BorderColor = Color.DarkGray;
+            btn_export.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_export.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_export.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_export.FillColor = Color.FromArgb(255, 149, 0);
+            btn_export.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btn_export.ForeColor = Color.White;
+            btn_export.Location = new Point(615, 483);
+            btn_export.Name = "btn_export";
+            btn_export.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_export.Size = new Size(100, 45);
+            btn_export.TabIndex = 12;
+            btn_export.Text = "Export";
             // 
             // guna2Panel13
             // 
@@ -607,25 +626,6 @@
             btn_ok.TabIndex = 35;
             btn_ok.Text = "OK";
             btn_ok.UseTransparentBackground = true;
-            // 
-            // btn_export
-            // 
-            btn_export.BorderColor = Color.FromArgb(255, 149, 0);
-            btn_export.BorderRadius = 10;
-            btn_export.CustomizableEdges = customizableEdges7;
-            btn_export.DisabledState.BorderColor = Color.DarkGray;
-            btn_export.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_export.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_export.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_export.FillColor = Color.FromArgb(255, 149, 0);
-            btn_export.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btn_export.ForeColor = Color.White;
-            btn_export.Location = new Point(615, 483);
-            btn_export.Name = "btn_export";
-            btn_export.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btn_export.Size = new Size(100, 45);
-            btn_export.TabIndex = 12;
-            btn_export.Text = "Export";
             // 
             // GetSettingStep2
             // 

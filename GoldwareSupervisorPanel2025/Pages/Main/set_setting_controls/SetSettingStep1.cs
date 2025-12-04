@@ -81,5 +81,10 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         {
 
         }
+
+        private void txt_production_date_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

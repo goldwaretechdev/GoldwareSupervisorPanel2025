@@ -96,8 +96,8 @@
             lbl_hardwarw_version = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel_device_type = new Guna.UI2.WinForms.Guna2Panel();
             comb_device_type = new Guna.UI2.WinForms.Guna2ComboBox();
-            lbl_device_type = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbl_device_type = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             panel_production_date.SuspendLayout();
             panel_serial_number.SuspendLayout();
@@ -211,6 +211,7 @@
             btn_close.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_close.Size = new Size(45, 29);
             btn_close.TabIndex = 40;
+            btn_close.Click += btn_close_Click;
             // 
             // txt_production_date
             // 
@@ -232,6 +233,7 @@
             txt_production_date.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txt_production_date.Size = new Size(300, 40);
             txt_production_date.TabIndex = 3;
+            txt_production_date.TextChanged += txt_production_date_TextChanged;
             // 
             // lbl_production_date
             // 
@@ -262,6 +264,7 @@
             btn_next.Size = new Size(350, 45);
             btn_next.TabIndex = 39;
             btn_next.Text = "Next";
+            btn_next.Click += btn_next_Click;
             // 
             // panel_production_date
             // 
@@ -483,15 +486,6 @@
             comb_device_type.Size = new Size(300, 36);
             comb_device_type.TabIndex = 14;
             // 
-            // lbl_device_type
-            // 
-            lbl_device_type.BackColor = Color.Transparent;
-            lbl_device_type.Location = new Point(21, 13);
-            lbl_device_type.Name = "lbl_device_type";
-            lbl_device_type.Size = new Size(63, 17);
-            lbl_device_type.TabIndex = 0;
-            lbl_device_type.Text = "device type";
-            // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
@@ -502,6 +496,15 @@
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "*";
             guna2HtmlLabel1.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // lbl_device_type
+            // 
+            lbl_device_type.BackColor = Color.Transparent;
+            lbl_device_type.Location = new Point(21, 13);
+            lbl_device_type.Name = "lbl_device_type";
+            lbl_device_type.Size = new Size(63, 17);
+            lbl_device_type.TabIndex = 0;
+            lbl_device_type.Text = "device type";
             // 
             // UpdateFOTAStep1
             // 

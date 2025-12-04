@@ -10,6 +10,9 @@
     <Compile Update="Pages\Login\control\SelectUnitControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Pages\Main\programming_controls\Programming.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Pages\Main\set_setting_controls\SetSettingStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -28,7 +31,7 @@
     <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\update_fota_controls\UpdatFOTAStep2.cs">
+    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

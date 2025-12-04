@@ -21,5 +21,15 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         {
 
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ctrl_min_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

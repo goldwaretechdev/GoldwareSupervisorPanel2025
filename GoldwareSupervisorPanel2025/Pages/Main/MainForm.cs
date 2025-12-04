@@ -1,5 +1,6 @@
 ﻿
 
+using GoldwareSupervisorPanel2025.Pages.Main.programming_controls;
 using GoldwareSupervisorPanel2025.Properties.services;
 using Guna.UI2.WinForms;
 
@@ -15,17 +16,19 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         private UpdateFOTAStep1 _updateFOTAStep1;
         private UpdateFOTAStep2 _updateFOTAStep2;
         private UpdateFOTAStep3 _updateFOTAStep3;
+        private Programming _programming;
         public MainForm(ICommonService commonService)
         {
             InitializeComponent();
             _commonService = commonService;
-            _setSettingStep1 = new SetSettingStep1(_commonService);
-            _setSettingStep2 = new SetSettingStep2(_commonService);
-            _getSettingStep1 = new GetSettingStep1();
-            _getSettingStep2 = new GetSettingStep2();
-            _updateFOTAStep1 = new UpdateFOTAStep1();
-            _updateFOTAStep2 = new UpdateFOTAStep2();
-            _updateFOTAStep3 = new UpdateFOTAStep3();
+            _setSettingStep1 = new(_commonService);
+            _setSettingStep2 = new(_commonService);
+            _getSettingStep1 = new();
+            _getSettingStep2 = new();
+            _updateFOTAStep1 = new(_commonService);
+            _updateFOTAStep2 = new();
+            _updateFOTAStep3 = new();
+            _programming = new();
             LoadSetSettingStep1();
         }
         private void LoadStep(UserControl step)
@@ -38,6 +41,9 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         {
             _setSettingStep1.OnNext += () => LoadSetSettingStep2();
             _getSettingStep1.OnNext += () => LoadGetSettingStep2();
+            _updateFOTAStep1.OnNext += () => LoadUpdateFOTAStep2();
+            _updateFOTAStep2.OnNext += () => LoadUpdateFOTAStep3();
+            _updateFOTAStep2.OnBack += () => LoadUpdateFOTAStep1();
             LoadStep(_setSettingStep1);
         }
 
@@ -55,6 +61,21 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         private void LoadGetSettingStep2()
         {
             LoadStep(_getSettingStep2);
+        }
+        
+        private void LoadUpdateFOTAStep1()
+        {
+            LoadStep(_updateFOTAStep1);
+        }
+         
+        private void LoadUpdateFOTAStep2()
+        {
+            LoadStep(_updateFOTAStep2);
+        }
+         
+        private void LoadUpdateFOTAStep3()
+        {
+            LoadStep(_updateFOTAStep3);
         }
 
         private void btn_set_settings_Click(object sender, EventArgs e)
@@ -94,6 +115,7 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
 
         private void btn_programming_Click(object sender, EventArgs e)
         {
+            LoadStep(_programming);
             SelectMenuItem(btn_programming);
         }
     }

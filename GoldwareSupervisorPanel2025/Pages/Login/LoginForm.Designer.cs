@@ -73,7 +73,7 @@
             panel_load_steps.Size = new Size(480, 600);
             panel_load_steps.TabIndex = 6;
             // 
-            // Login
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -83,7 +83,8 @@
             Controls.Add(panel_load_steps);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Login";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ورود به برنامه";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

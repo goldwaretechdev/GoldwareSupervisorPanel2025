@@ -382,6 +382,7 @@
             txt_production_date.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txt_production_date.Size = new Size(300, 40);
             txt_production_date.TabIndex = 3;
+            txt_production_date.TextChanged += txt_production_date_TextChanged;
             // 
             // lbl_production_date
             // 

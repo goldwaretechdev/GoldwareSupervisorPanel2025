@@ -12,6 +12,8 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
 {
     public partial class UpdateFOTAStep2 : UserControl
     {
+        public event Action? OnNext;
+        public event Action? OnBack;
         public UpdateFOTAStep2()
         {
             InitializeComponent();
@@ -20,6 +22,21 @@ namespace GoldwareSupervisorPanel2025.Pages.Main
         private void UpdatFOTAStep2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+            OnNext?.Invoke();
+        }
+
+        private void btn_previous_Click(object sender, EventArgs e)
+        {
+            OnBack?.Invoke();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

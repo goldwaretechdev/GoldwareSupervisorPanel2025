@@ -4,34 +4,34 @@
     <_LastSelectedProfileId>D:\Hasanabadi\Projects\GoldwareSupervisorPanel2025\GoldwareSupervisorPanel2025\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Pages\Login\control\LoginControl.cs">
+    <Compile Update="Forms\Login\control\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Login\control\SelectUnitControl.cs">
+    <Compile Update="Forms\Login\control\SelectUnitControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\programming_controls\Programming.cs">
+    <Compile Update="Forms\Main\programming_controls\Programming.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\set_setting_controls\SetSettingStep2.cs">
+    <Compile Update="Forms\Main\set_setting_controls\SetSettingStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Login\LoginForm.cs">
+    <Compile Update="Forms\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\Main\MainForm.cs">
+    <Compile Update="Forms\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\Main\set_setting_controls\SetSettingStep1.cs">
+    <Compile Update="Forms\Main\set_setting_controls\SetSettingStep1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep1.cs">
+    <Compile Update="Forms\Main\update_fota_controls\UpdateFOTAStep1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep3.cs">
+    <Compile Update="Forms\Main\update_fota_controls\UpdateFOTAStep3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Pages\Main\update_fota_controls\UpdateFOTAStep2.cs">
+    <Compile Update="Forms\Main\update_fota_controls\UpdateFOTAStep2.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

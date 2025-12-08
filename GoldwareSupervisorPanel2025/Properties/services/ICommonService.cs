@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,11 +11,15 @@ namespace GoldwareSupervisorPanel2025.Properties.services
     public interface ICommonService
     {
         public Image TintIcon(Image original, Color color);
+
+        public bool CheckInternetPing();
+
     }
 
 
     public class CommonService : ICommonService
     {
+        #region TintIcon
         public Image TintIcon(Image original, Color color)
         {
             Bitmap tinted = new Bitmap(original.Width, original.Height);
@@ -44,5 +49,23 @@ namespace GoldwareSupervisorPanel2025.Properties.services
 
             return tinted;
         }
+        #endregion
+
+        #region CheckInternetPing
+        public bool CheckInternetPing()
+        {
+            try
+            {
+                Ping ping = new Ping();
+                PingReply reply = ping.Send("8.8.8.8", 3000); // 3 second timeout
+                return reply.Status == IPStatus.Success;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
+
     }
 }

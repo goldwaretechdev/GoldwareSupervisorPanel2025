@@ -1,5 +1,6 @@
 ﻿using GoldwareSupervisorPanel2025.Models;
 using GoldwareSupervisorPanel2025.Properties.services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,17 @@ namespace GoldwareSupervisorPanel2025.Forms.Login.loginControl
     {
         private readonly ICommonService _commonService;
         private readonly IUserService _userService;
+        private readonly IServiceProvider _provider;
         public event Action? OnLogin;
         public List<RoleDto> Roles = new();
         public LoginInfo Info = new();
-        public LoginControl(ICommonService commonService, IUserService userService)
+        public LoginControl(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _commonService = commonService;
-            _userService = userService;
+            _provider = serviceProvider;
+
+            _commonService = _provider.GetRequiredService<ICommonService>();
+            _userService = _provider.GetRequiredService<IUserService>();
             if (_commonService.CheckInternetPing())
             {
                 lbl_connection_status.Text = "connected to server ✔";

@@ -9,6 +9,8 @@ namespace GoldwareSupervisorPanel2025.Models
     public static class Constants
     {
         public static readonly string BASE_URL = "https://localhost:7108/api";
+        public static readonly string AUTH_TYPE = "Bearer";
+
     }
 
     public static class ErrorCode

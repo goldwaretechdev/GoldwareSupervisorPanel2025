@@ -3,6 +3,7 @@ using GoldwareSupervisorPanel2025.Forms.Login.control;
 using GoldwareSupervisorPanel2025.Forms.Login.loginControl;
 using GoldwareSupervisorPanel2025.Properties.services;
 using Guna.UI2.WinForms;
+using Microsoft.Extensions.DependencyInjection;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
@@ -12,13 +13,15 @@ namespace GoldwareSupervisorPanel2025
     {
         private readonly ICommonService _commonService;
         private readonly IUserService _userService;
+        private readonly IServiceProvider _provider;
         private LoginControl _loginControl;
-        public LoginForm(ICommonService commonService,IUserService userService)
+        public LoginForm(ICommonService commonService,IUserService userService,IServiceProvider provider)
         {
             InitializeComponent();
+            _provider = provider;
             _commonService = commonService;
             _userService = userService;
-            _loginControl = new(_commonService,_userService);
+            _loginControl = _provider.GetRequiredService<LoginControl>();
             LoadLogin();
 
         }
@@ -32,7 +35,7 @@ namespace GoldwareSupervisorPanel2025
         private void LoadLogin()
         {
             _loginControl.OnLogin += () => 
-            LoadStep(new SelectUnitControl(_commonService,_userService, _loginControl.Roles,_loginControl.Info));
+            LoadStep(new SelectUnitControl( _loginControl.Roles,_loginControl.Info,_provider));
             LoadStep(_loginControl);
         }
 

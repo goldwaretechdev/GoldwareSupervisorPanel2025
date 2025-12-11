@@ -137,7 +137,7 @@
             ctrl_min.FillColor = Color.Transparent;
             ctrl_min.HoverState.FillColor = Color.FromArgb(213, 218, 223);
             ctrl_min.IconColor = Color.FromArgb(64, 64, 64);
-            ctrl_min.Location = new Point(728, 4);
+            ctrl_min.Location = new Point(729, 3);
             ctrl_min.Name = "ctrl_min";
             ctrl_min.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ctrl_min.Size = new Size(45, 29);
@@ -152,7 +152,7 @@
             ctrl_max.FillColor = Color.Transparent;
             ctrl_max.HoverState.FillColor = Color.FromArgb(213, 218, 223);
             ctrl_max.IconColor = Color.FromArgb(64, 64, 64);
-            ctrl_max.Location = new Point(779, 4);
+            ctrl_max.Location = new Point(780, 3);
             ctrl_max.Name = "ctrl_max";
             ctrl_max.ShadowDecoration.CustomizableEdges = customizableEdges8;
             ctrl_max.Size = new Size(45, 29);
@@ -166,7 +166,7 @@
             btn_close.FillColor = Color.Transparent;
             btn_close.HoverState.FillColor = Color.FromArgb(213, 218, 223);
             btn_close.IconColor = Color.FromArgb(64, 64, 64);
-            btn_close.Location = new Point(830, 4);
+            btn_close.Location = new Point(831, 3);
             btn_close.Name = "btn_close";
             btn_close.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_close.Size = new Size(45, 29);

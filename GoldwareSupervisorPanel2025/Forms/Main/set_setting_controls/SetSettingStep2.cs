@@ -1,5 +1,6 @@
 ﻿using GoldwareSupervisorPanel2025.Properties.services;
 using Guna.UI2.WinForms;
+using PersianDateTimeControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace GoldwareSupervisorPanel2025.Forms.Main
 
         private void SetSettingStep2_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void panel_software_version_Paint(object sender, PaintEventArgs e)

@@ -3,12 +3,15 @@
 using GoldwareSupervisorPanel2025.Forms.Main.programming_controls;
 using GoldwareSupervisorPanel2025.Properties.services;
 using Guna.UI2.WinForms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GoldwareSupervisorPanel2025.Forms.Main
 {
     public partial class MainForm : Form
     {
         private readonly ICommonService _commonService;
+        private readonly ISettingsService _settingsService;
+        private readonly IServiceProvider _provider;
         private SetSettingStep1 _setSettingStep1;
         private SetSettingStep2 _setSettingStep2;
         private GetSettingStep1 _getSettingStep1;
@@ -17,13 +20,15 @@ namespace GoldwareSupervisorPanel2025.Forms.Main
         private UpdateFOTAStep2 _updateFOTAStep2;
         private UpdateFOTAStep3 _updateFOTAStep3;
         private Programming _programming;
-        public MainForm(ICommonService commonService)
+        public MainForm(ICommonService commonService,ISettingsService settingsService,IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _commonService = commonService;
-            _setSettingStep1 = new(_commonService);
-            _setSettingStep2 = new(_commonService);
-            _getSettingStep1 = new();
+            _settingsService = settingsService;
+            _provider= serviceProvider;
+            _setSettingStep1 = _provider.GetRequiredService<SetSettingStep1>();
+            _setSettingStep2 = _provider.GetRequiredService<SetSettingStep2>(); ;
+            _getSettingStep1 = _provider.GetRequiredService<GetSettingStep1>(); ;
             _getSettingStep2 = new();
             _updateFOTAStep1 = new(_commonService);
             _updateFOTAStep2 = new();

@@ -71,16 +71,16 @@
             lbl_imei = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel_software_version = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            txt_ESP = new Guna.UI2.WinForms.Guna2TextBox();
+            combo_ESP = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel_STM = new Guna.UI2.WinForms.Guna2Panel();
-            txt_STM = new Guna.UI2.WinForms.Guna2TextBox();
+            comb_STM = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_STM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_software_version = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel_HT = new Guna.UI2.WinForms.Guna2Panel();
-            txt_HT = new Guna.UI2.WinForms.Guna2TextBox();
+            combo_HT = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_HT = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btn_save = new Guna.UI2.WinForms.Guna2Button();
@@ -240,7 +240,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(txt_ESP);
+            guna2Panel1.Controls.Add(combo_ESP);
             guna2Panel1.Controls.Add(guna2HtmlLabel2);
             guna2Panel1.Controls.Add(lbl);
             guna2Panel1.CustomizableEdges = customizableEdges17;
@@ -250,25 +250,24 @@
             guna2Panel1.Size = new Size(320, 100);
             guna2Panel1.TabIndex = 24;
             // 
-            // txt_ESP
+            // combo_ESP
             // 
-            txt_ESP.BorderRadius = 5;
-            txt_ESP.CustomizableEdges = customizableEdges15;
-            txt_ESP.DefaultText = "";
-            txt_ESP.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt_ESP.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt_ESP.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt_ESP.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt_ESP.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_ESP.Font = new Font("Segoe UI", 9F);
-            txt_ESP.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_ESP.Location = new Point(12, 36);
-            txt_ESP.Name = "txt_ESP";
-            txt_ESP.PlaceholderText = "ESP micro";
-            txt_ESP.SelectedText = "";
-            txt_ESP.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txt_ESP.Size = new Size(300, 40);
-            txt_ESP.TabIndex = 2;
+            combo_ESP.BackColor = Color.Transparent;
+            combo_ESP.BorderRadius = 5;
+            combo_ESP.CustomizableEdges = customizableEdges15;
+            combo_ESP.DrawMode = DrawMode.OwnerDrawFixed;
+            combo_ESP.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo_ESP.FocusedColor = Color.FromArgb(255, 149, 0);
+            combo_ESP.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
+            combo_ESP.Font = new Font("Segoe UI", 10F);
+            combo_ESP.ForeColor = Color.FromArgb(68, 88, 112);
+            combo_ESP.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            combo_ESP.ItemHeight = 30;
+            combo_ESP.Location = new Point(12, 36);
+            combo_ESP.Name = "combo_ESP";
+            combo_ESP.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            combo_ESP.Size = new Size(300, 36);
+            combo_ESP.TabIndex = 27;
             // 
             // guna2HtmlLabel2
             // 
@@ -292,7 +291,7 @@
             // 
             // panel_STM
             // 
-            panel_STM.Controls.Add(txt_STM);
+            panel_STM.Controls.Add(comb_STM);
             panel_STM.Controls.Add(guna2HtmlLabel1);
             panel_STM.Controls.Add(lbl_STM);
             panel_STM.CustomizableEdges = customizableEdges21;
@@ -302,25 +301,24 @@
             panel_STM.Size = new Size(320, 100);
             panel_STM.TabIndex = 24;
             // 
-            // txt_STM
+            // comb_STM
             // 
-            txt_STM.BorderRadius = 5;
-            txt_STM.CustomizableEdges = customizableEdges19;
-            txt_STM.DefaultText = "";
-            txt_STM.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt_STM.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt_STM.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt_STM.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt_STM.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_STM.Font = new Font("Segoe UI", 9F);
-            txt_STM.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_STM.Location = new Point(12, 36);
-            txt_STM.Name = "txt_STM";
-            txt_STM.PlaceholderText = "STM micro";
-            txt_STM.SelectedText = "";
-            txt_STM.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txt_STM.Size = new Size(300, 40);
-            txt_STM.TabIndex = 2;
+            comb_STM.BackColor = Color.Transparent;
+            comb_STM.BorderRadius = 5;
+            comb_STM.CustomizableEdges = customizableEdges19;
+            comb_STM.DrawMode = DrawMode.OwnerDrawFixed;
+            comb_STM.DropDownStyle = ComboBoxStyle.DropDownList;
+            comb_STM.FocusedColor = Color.FromArgb(255, 149, 0);
+            comb_STM.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
+            comb_STM.Font = new Font("Segoe UI", 10F);
+            comb_STM.ForeColor = Color.FromArgb(68, 88, 112);
+            comb_STM.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            comb_STM.ItemHeight = 30;
+            comb_STM.Location = new Point(12, 36);
+            comb_STM.Name = "comb_STM";
+            comb_STM.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            comb_STM.Size = new Size(300, 36);
+            comb_STM.TabIndex = 25;
             // 
             // guna2HtmlLabel1
             // 
@@ -355,7 +353,7 @@
             // 
             // panel_HT
             // 
-            panel_HT.Controls.Add(txt_HT);
+            panel_HT.Controls.Add(combo_HT);
             panel_HT.Controls.Add(guna2HtmlLabel3);
             panel_HT.Controls.Add(lbl_HT);
             panel_HT.CustomizableEdges = customizableEdges25;
@@ -365,25 +363,24 @@
             panel_HT.Size = new Size(320, 100);
             panel_HT.TabIndex = 23;
             // 
-            // txt_HT
+            // combo_HT
             // 
-            txt_HT.BorderRadius = 5;
-            txt_HT.CustomizableEdges = customizableEdges23;
-            txt_HT.DefaultText = "";
-            txt_HT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt_HT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt_HT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt_HT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt_HT.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_HT.Font = new Font("Segoe UI", 9F);
-            txt_HT.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
-            txt_HT.Location = new Point(12, 36);
-            txt_HT.Name = "txt_HT";
-            txt_HT.PlaceholderText = "Holtek micro";
-            txt_HT.SelectedText = "";
-            txt_HT.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txt_HT.Size = new Size(300, 40);
-            txt_HT.TabIndex = 2;
+            combo_HT.BackColor = Color.Transparent;
+            combo_HT.BorderRadius = 5;
+            combo_HT.CustomizableEdges = customizableEdges23;
+            combo_HT.DrawMode = DrawMode.OwnerDrawFixed;
+            combo_HT.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo_HT.FocusedColor = Color.FromArgb(255, 149, 0);
+            combo_HT.FocusedState.BorderColor = Color.FromArgb(255, 149, 0);
+            combo_HT.Font = new Font("Segoe UI", 10F);
+            combo_HT.ForeColor = Color.FromArgb(68, 88, 112);
+            combo_HT.HoverState.BorderColor = Color.FromArgb(255, 149, 0);
+            combo_HT.ItemHeight = 30;
+            combo_HT.Location = new Point(12, 36);
+            combo_HT.Name = "combo_HT";
+            combo_HT.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            combo_HT.Size = new Size(300, 36);
+            combo_HT.TabIndex = 26;
             // 
             // guna2HtmlLabel3
             // 
@@ -507,5 +504,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl;
         private Guna.UI2.WinForms.Guna2Button btn_save;
         private Guna.UI2.WinForms.Guna2Button btn_previous;
+        private Guna.UI2.WinForms.Guna2ComboBox comb_STM;
+        private Guna.UI2.WinForms.Guna2ComboBox combo_ESP;
+        private Guna.UI2.WinForms.Guna2ComboBox combo_HT;
     }
 }

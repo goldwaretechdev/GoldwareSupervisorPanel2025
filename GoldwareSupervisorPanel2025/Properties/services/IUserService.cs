@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,10 +19,12 @@ namespace GoldwareSupervisorPanel2025.Properties.services
     public class UserService : IUserService
     {
         private readonly HttpClient _client;
+        private readonly string TOKEN;
 
         public UserService()
         {
             _client = new();
+            TOKEN = Settings.Default.AuthToken;
         }
 
         public async Task<Result<List<RoleDto>>> Login(string username, string password)
@@ -32,7 +35,10 @@ namespace GoldwareSupervisorPanel2025.Properties.services
                 Password = password
             };
             var content = new StringContent(JsonConvert.SerializeObject(info),Encoding.UTF8,"application/json");
-            var response =await _client.PostAsync(Constants.BASE_URL + "/User/Login",content);
+            var request = new HttpRequestMessage(HttpMethod.Post, Constants.BASE_URL + "/User/Login");
+            request.Content = content;
+            //request.Headers.Authorization = new AuthenticationHeaderValue(Constants.AUTH_TYPE, TOKEN );
+            var response =await _client.SendAsync(request);
             if (!response.IsSuccessStatusCode) return Result<List<RoleDto>>.Fail(ErrorCode.INTERNAL_ERROR, "خطای سرور!");
             string json = await response.Content.ReadAsStringAsync();
 

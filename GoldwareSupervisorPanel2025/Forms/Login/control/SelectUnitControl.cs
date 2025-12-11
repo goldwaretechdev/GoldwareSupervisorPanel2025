@@ -1,15 +1,8 @@
 ﻿using GoldwareSupervisorPanel2025.Forms.Main;
 using GoldwareSupervisorPanel2025.Models;
 using GoldwareSupervisorPanel2025.Properties.services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace GoldwareSupervisorPanel2025.Forms.Login.control
 {
@@ -17,13 +10,18 @@ namespace GoldwareSupervisorPanel2025.Forms.Login.control
     {
         private readonly ICommonService _commonService;
         private readonly IUserService _userService;
+        private readonly ISettingsService _settingsService;
+        private readonly IServiceProvider _provider;
         private readonly LoginInfo info = new();
 
-        public SelectUnitControl(ICommonService common,IUserService userService,List<RoleDto> roleList,LoginInfo loginInfo)
+        public SelectUnitControl(List<RoleDto> roleList
+            ,LoginInfo loginInfo, IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _commonService = common;
-            _userService = userService;
+            _provider = serviceProvider;
+            _commonService = _provider.GetRequiredService<ICommonService>();
+            _userService = _provider.GetRequiredService<IUserService>();
+            _settingsService = _provider.GetRequiredService<ISettingsService>();
             comb_units.DataSource= roleList;
             comb_units.DisplayMember = "Name";
             comb_units.ValueMember = "Id";
@@ -56,7 +54,11 @@ namespace GoldwareSupervisorPanel2025.Forms.Login.control
                 return;
             }
             var token = response.Data;
-            MainForm main = new(_commonService);
+            Properties.Settings.Default.AuthToken = token;
+            Properties.Settings.Default.Save();
+
+
+            var main = _provider.GetRequiredService<MainForm>(); ;
             main.Show();
             ParentForm.Hide();
         }

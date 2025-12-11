@@ -1,0 +1,36 @@
+﻿using GoldwareSupervisorPanel2025.Models.Enums;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GoldwareSupervisorPanel2025.Models
+{
+    public class SoftwareVersionDto
+    {
+        public int Id { get; set; }
+        [MaxLength(50)]
+        public string Version { get; set; }
+        public MicroType MicroType { get; set; }
+        public DeviceType DeviceType { get; set; }
+        public ProductCategory Category { get; set; }
+        //todo category
+        public string Path { get; set; }
+
+    }
+
+    public class ItemVersion
+    {
+        public int Id { get; set; }
+        public string Version { get; set; }
+    }
+
+    public class CategorizedVersions
+    {
+        public List<ItemVersion> ESP { get; set; } = new();
+        public List<ItemVersion> STM { get; set; } = new();
+        public List<ItemVersion> Holtek { get; set; } = new();
+    }
+}

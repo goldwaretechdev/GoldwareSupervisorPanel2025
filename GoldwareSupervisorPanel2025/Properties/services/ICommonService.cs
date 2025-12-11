@@ -13,6 +13,7 @@ namespace GoldwareSupervisorPanel2025.Properties.services
         public Image TintIcon(Image original, Color color);
 
         public bool CheckInternetPing();
+        public string GenerateShortUniqueCode(int length = 10);
 
     }
 
@@ -67,5 +68,13 @@ namespace GoldwareSupervisorPanel2025.Properties.services
         }
         #endregion
 
+        #region GenerateShortUniqueCode
+        public string GenerateShortUniqueCode(int length = 10)
+        {
+            return Guid.NewGuid().ToString("N")
+                .Substring(0, length)
+                .ToUpper();
+        }
+        #endregion
     }
 }

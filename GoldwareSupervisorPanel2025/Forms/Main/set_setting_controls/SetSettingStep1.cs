@@ -1,13 +1,6 @@
-﻿using GoldwareSupervisorPanel2025.Properties.services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GoldwareSupervisorPanel2025.Models;
+using GoldwareSupervisorPanel2025.Models.Enums;
+using GoldwareSupervisorPanel2025.Properties.services;
 
 namespace GoldwareSupervisorPanel2025.Forms.Main
 {
@@ -15,12 +8,14 @@ namespace GoldwareSupervisorPanel2025.Forms.Main
     {
 
         private readonly ICommonService _commonService;
+        private readonly ISettingsService _settingsService;
         public event Action? OnNext;
 
-        public SetSettingStep1(ICommonService commonService)
+        public SetSettingStep1(ICommonService commonService,ISettingsService settingsService)
         {
             InitializeComponent();
             _commonService = commonService;
+            _settingsService = settingsService;
 
             txt_production_date.Enter += txt_production_date_Enter;
             txt_production_date.Leave += txt_production_date_Leave;
@@ -77,14 +72,80 @@ namespace GoldwareSupervisorPanel2025.Forms.Main
 
         }
 
-        private void SetSettingStep1_Load(object sender, EventArgs e)
+        private async void SetSettingStep1_Load(object sender, EventArgs e)
         {
+            //owners
+            var response = await _settingsService.Owners();
+            if (!response.Success)
+            {
+                MessageBox.Show(response.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            comb_owner.DataSource = response.Data;
+            comb_owner.DisplayMember = "Text";
+            comb_owner.ValueMember = "Value";
 
+            comb_device_type.DataSource = Enum.GetValues(typeof(DeviceType))
+           .Cast<DeviceType>()
+           .Select(e => new SelectListItem
+           {
+               Value = Convert.ToInt32(e).ToString(),
+               Text = e.ToString()
+           })
+           .ToList();
+            comb_device_type.DisplayMember = "Text";
+            comb_device_type.ValueMember = "Value";
+
+            comb_category.DataSource = Enum.GetValues(typeof(ProductCategory))
+           .Cast<ProductCategory>()
+           .Select(e => new SelectListItem
+           {
+               Value = Convert.ToInt32(e).ToString(),
+               Text = e.ToString()
+           })
+           .ToList();
+            comb_category.DisplayMember = "Text";
+            comb_category.ValueMember = "Value";
         }
 
         private void txt_production_date_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_serial_number_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtn_batch_number_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtn_batch_number.Checked)
+            {
+                txt_batch_number.Focus();
+                btn_generate_batch.Enabled = true;
+                btn_generate_serial.Enabled = false;
+            }
+        }
+
+        private void rbtn_serial_number_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtn_serial_number.Checked)
+            {
+                txt_serial_number.Focus();
+                btn_generate_batch.Enabled = false;
+                btn_generate_serial.Enabled = true;
+            }
+        }
+
+        private void btn_generate_batch_Click(object sender, EventArgs e)
+        {
+            txt_batch_number.Text = comb_owner.SelectedText + _commonService.GenerateShortUniqueCode(5);
+        }
+
+        private void btn_generate_serial_Click(object sender, EventArgs e)
+        {
+            txt_serial_number.Text = _commonService.GenerateShortUniqueCode(10);
         }
     }
 }
